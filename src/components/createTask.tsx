@@ -57,7 +57,7 @@ export default function CreateTask() {
   };
   return (
     <div className="w-[500px] h-[500px]  overflow-hidden">
-      <div className="w-full h-full  bg-[#352961]  rounded-[20px] p-4">
+      <div className="w-full h-full  bg-gray-200  rounded-[20px] p-4">
         <form className="p-4 items-center flex flex-col" onSubmit={submit}>
           {error && (
             <h1 className="text-2xl text-red-500 font-bold">{error.message}</h1>
@@ -88,28 +88,7 @@ export default function CreateTask() {
               value={date}
               required
             />
-
-            {/* <input
-              // onChange={(e) => onChange(e, "title", false)}
-              // value={date}
-              onChange={(e) => setDate(e.target.valueAsDate)}
-              required
-              type="date"
-              placeholder="write the title"
-              className="w-full p-6 h-[35px] border-none rounded-md outline-none bg-white"
-            /> */}
           </div>
-          {/* 
-          <div className="w-full mt-4">
-            <input
-              onChange={(e) => onChange(e, "date", true)}
-              value={element.date}
-              type="number"
-              // required
-              placeholder="write the date you need it"
-              className="w-full p-6 h-[35px] border-none rounded-md outline-none bg-white"
-            />
-          </div> */}
 
           <div className="w-full mt-4">
             <textarea

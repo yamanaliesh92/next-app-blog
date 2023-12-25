@@ -17,7 +17,7 @@ export default function TaskPage() {
           add Task
         </Link>
       </div>
-      {/* <div className="flex items-center"> */}
+
       <Completed />
     </div>
   );

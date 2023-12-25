@@ -18,7 +18,6 @@ export default function ImportantPage() {
         </Link>
       </div>
 
-      {/* <div className="flex items-center"> */}
       <Important />
     </div>
   );

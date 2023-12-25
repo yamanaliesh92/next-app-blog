@@ -75,7 +75,3 @@ export default function Login(props: props) {
     </div>
   );
 }
-// important and completed is boolean and name=important.tostring() type="date e.target.chckerd/date:E.tragetr.vaklue
-
-// title decriaotoion date completed important
-// "

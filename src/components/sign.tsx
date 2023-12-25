@@ -45,8 +45,8 @@ export default function Sign() {
     await mutateAsync(body);
   };
   return (
-    <div className="w-[400px] h-[400px] overflow-hidden">
-      <div className="w-full h-full bg-yellow-100 rounded-[20px]">
+    <div className="w-[400px] h-[400px] bg-gray-200  overflow-hidden">
+      <div className="w-full h-full  rounded-[20px]">
         <form className="p-4 items-center flex flex-col" onSubmit={onSubmit}>
           <h1 data-cy="title" className="text-2xl font-bold items-center">
             Sign In
@@ -63,7 +63,7 @@ export default function Sign() {
               data-cy="emailInput"
               onChange={onChange}
               name="email"
-              className="w-full p-6 h-[35px] border-none rounded-md outline-none bg-slate-900"
+              className="w-full p-6 h-[35px] border-none rounded-md outline-none"
             />
           </div>
           <div className="w-full mt-8">
@@ -73,7 +73,7 @@ export default function Sign() {
               name="password"
               data-cy="passwordInput"
               onChange={onChange}
-              className="w-full p-6 h-[35px] border-none rounded-md outline-none bg-slate-900"
+              className="w-full p-6 h-[35px] border-none rounded-md outline-none"
             />
           </div>
 
@@ -84,13 +84,13 @@ export default function Sign() {
               name="name"
               data-cy="nameInput"
               onChange={onChange}
-              className="w-full p-6 h-[35px] border-none rounded-md outline-none bg-slate-900"
+              className="w-full p-6 h-[35px] border-none rounded-md outline-none"
             />
           </div>
           <div className="flex place-self-start justify-between items-center mt-4">
             <button
               data-cy="submit"
-              className="w-fit  h-fit border-none rounded-md outline-none bg-green-300 text-white p-4"
+              className="w-fit  h-fit border-none rounded-md outline-none bg-blue-500 text-white p-4"
             >
               sign
             </button>
