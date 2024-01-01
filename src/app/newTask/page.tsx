@@ -4,7 +4,7 @@ import React from "react";
 
 export default function pageTask() {
   return (
-    <div className="w-full h-full items-start flex p-4">
+    <div className="w-full  h-full items-start flex p-4">
       <CreateTask />
     </div>
   );

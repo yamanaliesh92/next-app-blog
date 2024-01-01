@@ -56,7 +56,7 @@ export default function Sign() {
             <h1 className="font-bold text-red-500">{error?.message}</h1>
           )}
 
-          <div className="w-full mt-8">
+          <div className="w-full relative mt-8">
             <input
               value={element.email}
               type={"email"}
@@ -67,6 +67,7 @@ export default function Sign() {
             />
           </div>
           <div className="w-full mt-8">
+            d
             <input
               value={element.password}
               type={"password"}

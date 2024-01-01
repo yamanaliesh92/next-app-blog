@@ -11,6 +11,8 @@ import "react-datetime-picker/dist/DateTimePicker.css";
 import { createTaskApi } from "@/axios/task/create.task.api";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { setCookie } from "@/utils/cookie";
 
 const init = {
   title: "",
@@ -30,6 +32,12 @@ export default function CreateTask() {
       router.push("/");
     },
   });
+
+  const { data } = useSession();
+
+  const token = data?.user.token;
+
+  setCookie("token", token as string);
 
   const onChange = (
     e: ChangeEvent<HTMLInputElement>,

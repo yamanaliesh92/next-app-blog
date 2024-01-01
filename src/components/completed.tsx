@@ -13,7 +13,11 @@ import { toast } from "react-hot-toast";
 export default function Completed() {
   const queryClient = useQueryClient();
 
-  const { data: dataTask } = useQuery<I>({
+  const {
+    data: dataTask,
+    error,
+    isLoading,
+  } = useQuery<I>({
     queryKey: ["all"],
     queryFn: allMyTaskApi,
   });
@@ -23,7 +27,7 @@ export default function Completed() {
   });
 
   const deleteTask = async (_id: string) => {
-    const filleter = dataTask?.data?.filter((item) => item._id !== _id);
+    dataTask?.data?.filter((item) => item._id !== _id);
     await mutateAsync(_id, {
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["all"] });
@@ -33,6 +37,8 @@ export default function Completed() {
   };
   return (
     <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4  mt-2 ">
+      {isLoading && <h1>loading....</h1>}
+      {error && <h1>{error.message}</h1>}
       {dataTask &&
         dataTask.data
           .filter((it) => it.completed === true)

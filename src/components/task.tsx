@@ -45,6 +45,7 @@ const Task: FC<props> = ({ data, deleteTask }) => {
   };
   return (
     <div>
+      {error && <h1>{error.message}</h1>}
       <div
         key={data._id}
         data-cy={`task${data._id}`}

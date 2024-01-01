@@ -16,7 +16,7 @@ export default function Login(props: props) {
       email: element.email,
       password: element.password,
       redirect: true,
-      callbackUrl: "/",
+      callbackUrl: "/newTask",
     });
   };
   return (

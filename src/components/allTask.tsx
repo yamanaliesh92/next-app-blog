@@ -9,12 +9,15 @@ import { allMyTaskApi, I } from "@/axios/task/allMy-task.api";
 import { deleteTaskApi } from "@/axios/task/delete.task.api";
 import Task from "./task";
 import { toast } from "react-hot-toast";
-import { updateTaskApi } from "@/axios/task/update.task.api";
 
 export default function AllTask() {
   const queryClient = useQueryClient();
 
-  const { data: dataTask } = useQuery<I>({
+  const {
+    data: dataTask,
+    isLoading,
+    error,
+  } = useQuery<I>({
     queryKey: ["all"],
     queryFn: allMyTaskApi,
   });
@@ -24,7 +27,7 @@ export default function AllTask() {
   });
 
   const deleteTask = async (_id: string) => {
-    const filleter = dataTask?.data?.filter((item) => item._id !== _id);
+    dataTask?.data?.filter((item) => item._id !== _id);
     await mutateAsync(_id, {
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["all"] });
@@ -34,6 +37,8 @@ export default function AllTask() {
   };
   return (
     <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4  mt-2 ">
+      {isLoading && <h1>loading....</h1>}
+      {error && <h1>{error.message}</h1>}
       {dataTask &&
         dataTask.data.map((item) => (
           <Task data={item} deleteTask={deleteTask} />
